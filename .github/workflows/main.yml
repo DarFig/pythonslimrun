@@ -17,7 +17,7 @@ jobs:
         REGISTRY="ghcr.io"
         IMAGE="${REGISTRY}/darfig/pythonslimrun"
         TAGS="${IMAGE}:${{ steps.extract_branch.outputs.branch }}"
-        if [[ $TAGS == ref/head/master || $TAGS == ref/head/main ]]; then
+        if [[ $GITHUB_REF == ref/head/master || $GITHUB_REF == ref/head/main ]]; then
           TAGS="${IMAGE}:latest"
         fi
         echo ${TAGS}

@@ -11,5 +11,6 @@ python alpine based docker to develop personal projets
 - mount the working folder when run docker in /workspace:
 
 ```bash
+docker pull ghcr.io/darfig/pythonslimrun:latest
 docker run -v "$PWD"/yourworkfolder:/workspace pythonslimrun:latest
 ```

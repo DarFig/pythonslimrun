@@ -11,7 +11,7 @@ jobs:
       run: |
         REGISTRY="docker.pkg.github.com"
         IMAGE="${REGISTRY}/${{ github.repository }}/pythonslimrun"
-        TAGS="${IMAGE}:$GITHUB_REF"
+        TAGS="${IMAGE}:${GITHUB_REF}"
         if [[ $GITHUB_REF == ref/head/master ]]; then
           TAGS="${TAGS},${IMAGE}:latest"
         fi

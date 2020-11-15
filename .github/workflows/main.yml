@@ -14,8 +14,8 @@ jobs:
     - name: Preparation
       id: prep
       run: |
-        REGISTRY="docker.pkg.github.com"
-        IMAGE="${REGISTRY}/darfig/pythonslimrun/pythonslimrun"
+        REGISTRY="ghcr.io"
+        IMAGE="${REGISTRY}/darfig/pythonslimrun"
         TAGS="${IMAGE}:${{ steps.extract_branch.outputs.branch }}"
         if [[ $GITHUB_REF == ref/head/master ]]; then
           TAGS="${TAGS},${IMAGE}:latest"
@@ -26,7 +26,7 @@ jobs:
     - name: Login to GitHub Container Registry
       uses: docker/login-action@v1 
       with:
-        registry: docker.pkg.github.com
+        registry: ghcr.io
         username: ${{ github.repository_owner }}
         password: ${{ secrets.CR_PAT }} 
     - name: build and push to docker

@@ -14,3 +14,9 @@ python alpine based docker to develop personal projets
 docker pull ghcr.io/darfig/pythonslimrun:latest
 docker run -v "$PWD"/yourworkfolder:/workspace pythonslimrun:latest
 ```
+
+## Tags
+
+- latest 
+- python3.10
+- python3.7
